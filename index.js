@@ -28,11 +28,11 @@ class Neighborhood {
     }
     
     meals(){
-      return this.deliveries().map(
+      return Array.from(new Set(this.deliveries().map(
           function(delivery) {
                 return delivery.meal();
             }.bind(this)
-        )
+        )))
     }
 }
 
